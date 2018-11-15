@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/sureMessageTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sure To Do?"
+            android:layout_marginLeft="@dimen/dialog_padding"
+            android:layout_marginRight="@dimen/dialog_padding"
+            android:layout_marginTop="@dimen/dialog_padding"
+            android:textSize="@dimen/list_item_title"
+            android:textColor="@color/primary_text"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dialog_padding">
+
+            <Button
+                android:id="@+id/sureCancelBTN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textSize="@dimen/list_item_date"
+                android:textColor="@color/primary"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/button_secondary_background"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:id="@+id/sureDoneBTN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:textSize="@dimen/list_item_date"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/button_primary_background"
+                android:textColor="@android:color/white"
+                android:layout_alignParentRight="true" />
+
+            <ProgressBar
+                android:id="@+id/surePB"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

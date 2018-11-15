@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.crazy_iter.ishada.TaskPreviewActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/loading_point_xy">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/taskTB"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:title="Task Details"
+                    app:titleTextColor="@android:color/white"
+                    android:theme="@style/ToolbarWhiteBack"/>
+
+            </android.support.design.widget.AppBarLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/preview_padding_lr"
+                android:paddingRight="@dimen/preview_padding_lr"
+                android:paddingTop="@dimen/loading_point_xy"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/previewTitleTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Title"
+                        android:textSize="@dimen/preview_title"
+                        android:textColor="@color/primary_text"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/loading_point_margin"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/task_iv_xy"
+                            android:layout_height="@dimen/task_iv_xy"
+                            app:srcCompat="@drawable/ic_event"
+                            android:layout_margin="@dimen/loading_point_margin"/>
+
+                        <TextView
+                            android:id="@+id/previewDateTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Date"
+                            android:textSize="@dimen/preview_date"
+                            android:textColor="@color/primary_text"
+                            tools:ignore="HardcodedText,SpUsage" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/previewStatusIV"
+                    android:layout_width="@dimen/task_iv_xy"
+                    android:layout_height="@dimen/task_iv_xy"
+                    android:layout_marginLeft="@dimen/preview_padding_lr"
+                    app:srcCompat="@drawable/ic_hourglass"
+                    android:background="@drawable/task_status_background"
+                    android:padding="@dimen/loading_point_margin"
+                    tools:ignore="RtlHardcoded" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/preview_padding_lr"
+                android:layout_marginLeft="@dimen/preview_padding_lr"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/task_iv_xy"
+                    android:layout_height="@dimen/task_iv_xy"
+                    app:srcCompat="@drawable/ic_person_accent"
+                    android:layout_margin="@dimen/loading_point_margin"/>
+
+                <TextView
+                    android:id="@+id/previewAssignTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Assign to"
+                    android:textSize="@dimen/preview_date"
+                    android:textColor="@color/primary_text"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/previewDescriptionTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="@dimen/preview_date"
+                android:layout_marginRight="@dimen/preview_padding_lr"
+                android:layout_marginLeft="@dimen/preview_padding_lr"
+                android:textColor="@color/primary_text"
+                tools:ignore="HardcodedText,SpUsage" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/previewFL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true" />
+
+</RelativeLayout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.crazy_iter.ishada.CreateNewTaskActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/loading_point_xy">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/taskTB"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:title="New Task"
+                    app:titleTextColor="@android:color/white"
+                    android:theme="@style/ToolbarWhiteBack"/>
+
+            </android.support.design.widget.AppBarLayout>
+
+            <EditText
+                android:id="@+id/newTaskTitleET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Task Title"
+                android:layout_marginTop="@dimen/loading_point_margin"
+                android:layout_marginRight="@dimen/preview_padding_lr"
+                android:layout_marginLeft="@dimen/preview_padding_lr"
+                android:textSize="@dimen/preview_title"
+                android:textColor="@color/primary_text"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/preview_padding_lr"
+                android:layout_marginLeft="@dimen/preview_padding_lr"
+                android:layout_marginTop="@dimen/preview_padding_lr"
+                android:layout_marginBottom="@dimen/loading_point_margin"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/task_iv_xy"
+                    android:layout_height="@dimen/task_iv_xy"
+                    app:srcCompat="@drawable/ic_event"
+                    android:layout_margin="@dimen/loading_point_margin"/>
+
+                <EditText
+                    android:id="@+id/newTaskDateET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="2018-11-17"
+                    android:textSize="@dimen/preview_date"
+                    android:textColor="@color/primary_text"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/preview_padding_lr"
+                android:layout_marginLeft="@dimen/preview_padding_lr"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/task_iv_xy"
+                    android:layout_height="@dimen/task_iv_xy"
+                    app:srcCompat="@drawable/ic_time"
+                    android:layout_margin="@dimen/loading_point_margin"/>
+
+                <EditText
+                    android:id="@+id/newTaskTimeET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="15:00"
+                    android:textSize="@dimen/preview_date"
+                    android:textColor="@color/primary_text"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/preview_padding_lr"
+                android:layout_marginLeft="@dimen/preview_padding_lr"
+                android:layout_marginBottom="@dimen/preview_padding_lr"
+                android:layout_marginTop="@dimen/loading_point_margin"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/task_iv_xy"
+                    android:layout_height="@dimen/task_iv_xy"
+                    app:srcCompat="@drawable/ic_person_accent"
+                    android:layout_margin="@dimen/loading_point_margin"/>
+
+                <EditText
+                    android:id="@+id/newTaskUsersET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="user1, user2, ..."
+                    android:textSize="@dimen/preview_date"
+                    android:textColor="@color/primary_text"
+                    tools:ignore="HardcodedText,SpUsage" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/newTaskDescriptionTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:textSize="@dimen/preview_date"
+                android:layout_marginRight="@dimen/preview_padding_lr"
+                android:layout_marginLeft="@dimen/preview_padding_lr"
+                android:textColor="@color/primary_text"
+                tools:ignore="HardcodedText,SpUsage" />
+
+            <Button
+                android:id="@+id/newTaskBTN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_primary_background"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/preview_title"
+                android:textAllCaps="false"
+                android:text="Add Task"
+                android:layout_margin="@dimen/preview_padding_lr"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/newTaskFL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

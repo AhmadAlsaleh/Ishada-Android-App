@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="loading_point_xy">12dp</dimen>
+    <dimen name="loading_point_margin">5dp</dimen>
+    <dimen name="list_task_margin">8dp</dimen>
+    <dimen name="list_task_margin_tb">4dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="task_list_item_h">65dp</dimen>
+
+    <dimen name="dialog_padding">10dp</dimen>
+
+    <dimen name="list_item_title">20dp</dimen>
+    <dimen name="list_item_date">15dp</dimen>
+    <dimen name="task_iv_xy">35dp</dimen>
+    <dimen name="divider_x">1dp</dimen>
+
+    <dimen name="preview_title">25dp</dimen>
+    <dimen name="preview_date">20dp</dimen>
+    <dimen name="preview_padding_lr">22dp</dimen>
+    <dimen name="main_logo">200dp</dimen>
+
+</resources>
