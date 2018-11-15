@@ -3,7 +3,7 @@ package com.crazy_iter.ishada;
 public interface StaticVars {
 
     String name = "ishada";
-
+String hi = "HI";
     // region APIs
 
     String URL_BASE = "https://ishada.herokuapp.com/";
