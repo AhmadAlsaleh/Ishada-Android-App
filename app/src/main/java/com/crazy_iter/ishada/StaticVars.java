@@ -5,6 +5,7 @@ public interface StaticVars {
     String name = "ishada";
 
     // region APIs
+
     String URL_BASE = "https://ishada.herokuapp.com/";
     String TASKS_BASE = URL_BASE + "tasks/";
     String ASSIGN_TASK = TASKS_BASE + "assignTask/";
@@ -16,6 +17,7 @@ public interface StaticVars {
     String SIGN_IN = USERS_BASE + "signin/";
     String SIGN_UP = USERS_BASE + "signup/";
     String USERS_BY_IDs = USERS_BASE + "getUsersByIDs/";
+
     // endregion
 
 }
