@@ -4,6 +4,7 @@ public interface StaticVars {
 
     String name = "ishada";
 
+String hello = "Hello";
     // region APIs
 
     String URL_BASE = "https://ishada.herokuapp.com/";
