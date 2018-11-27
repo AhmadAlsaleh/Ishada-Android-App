@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/dialog_padding">
+
+        <TextView
+            android:id="@+id/selectedYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018"
+            android:textColor="@color/primary_light"
+            android:textSize="@dimen/preview_date"/>
+
+        <TextView
+            android:id="@+id/selectedMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="June"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/preview_title"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/monthsLV"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="@dimen/divider_x"
+            android:layout_height="match_parent"
+            android:background="@color/divider"/>
+
+        <ListView
+            android:id="@+id/yearsLV"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_x"
+        android:background="@color/divider"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dialog_padding">
+
+        <Button
+            android:id="@+id/dateCancelBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textSize="@dimen/list_item_date"
+            android:textColor="@color/primary"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/button_secondary_background"
+            android:layout_alignParentLeft="true" />
+
+        <Button
+            android:id="@+id/dateDoneBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:textSize="@dimen/list_item_date"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/button_primary_background"
+            android:textColor="@android:color/white"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+</LinearLayout>

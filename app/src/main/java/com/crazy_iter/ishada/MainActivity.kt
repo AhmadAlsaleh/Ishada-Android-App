@@ -33,7 +33,9 @@ class MainActivity : AppCompatActivity() {
         mainTL.setupWithViewPager(mainVP)
 
         mainSRL.setColorSchemeColors(resources.getColor(R.color.primary))
-        mainSRL.isRefreshing = false
+        mainSRL.isRefreshing = true
+        getTasks()
+
         mainSRL.setOnRefreshListener {
             getTasks()
         }

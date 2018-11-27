@@ -17,6 +17,18 @@ public interface StaticVars {
     String SIGN_UP = USERS_BASE + "signup/";
     String USERS_BY_IDs = USERS_BASE + "getUsersByIDs/";
 
+    String MEETINGS = URL_BASE + "meetings/";
+    String NEW_MEETING = MEETINGS + "newMeeting";
+    String EDIT_MEETING = MEETINGS + "editMeeting";
+    String DELETE_MEETING = MEETINGS + "deleteMeeting";
+
     // endregion
 
+    /*
+	"items" : [{
+		"num" : 1,
+		"subject" : "S1",
+		"extra" : "E1",
+	}]
+     */
 }

@@ -21,7 +21,10 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".TaskPreviewActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".CreateNewTaskActivity"></activity>
+        <activity android:name=".CreateNewTaskActivity" />
+        <activity android:name=".MeetingsActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".NewMeetingActivity"></activity>
     </application>
 
 </manifest>

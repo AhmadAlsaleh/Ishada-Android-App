@@ -20,4 +20,6 @@
     <dimen name="preview_padding_lr">22dp</dimen>
     <dimen name="main_logo">200dp</dimen>
 
+    <dimen name="register_logo">120dp</dimen>
+
 </resources>

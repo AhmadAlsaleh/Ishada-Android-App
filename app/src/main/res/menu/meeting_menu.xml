@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/meetingDate"
+        android:title="date"
+        android:icon="@drawable/ic_event_white"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/meetingTask"
+        android:title="Show Tasks"
+        android:visible="false"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/meetingResister"
+        android:title="New User"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/meetingLogout"
+        android:title="Sign out"
+        app:showAsAction="never" />
+
+</menu>

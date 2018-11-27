@@ -5,11 +5,6 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
-import com.android.volley.DefaultRetryPolicy
-import com.android.volley.toolbox.JsonArrayRequest
-import com.android.volley.toolbox.Volley
-import com.crazy_iter.ishada.Models.TaskModel
 import kotlinx.android.synthetic.main.activity_launcher.*
 
 class LauncherActivity : AppCompatActivity() {
@@ -21,56 +16,15 @@ class LauncherActivity : AppCompatActivity() {
         setLoader(1)
 
         Handler().postDelayed({
-            getTasks()
-        }, 2000)
-
-    }
-
-    private fun getTasks() {
-        val queue = Volley.newRequestQueue(this)
-        val tasksRequest = JsonArrayRequest(StaticVars.TASKS_BASE, {
-            queue.cancelAll("tasks")
-            Log.e("tasks", it.toString())
-            StaticMethods.tasks = ArrayList<TaskModel>()
-
-            for (i in 0 until it.length()) {
-                val task = it.getJSONObject(i)
-
-                var users = ArrayList<String>()
-                try {
-                    for (j in 0 until task.getJSONArray("taskUser").length()) {
-                        users.add(task.getJSONArray("taskUser").getJSONObject(j).getString("userID"))
-                    }
-                } catch (e: Exception) {
-                    Log.e("err", e.message)
-                    users = ArrayList()
-                }
-                val taskModel = TaskModel(task.getString("_id"),
-                        task.getString("title"),
-                        task.getString("description"),
-                        task.getString("status"),
-                        task.getString("todoDate"),
-                        users)
-
-                StaticMethods.tasks.add(taskModel)
-            }
-
             val perfs = getSharedPreferences("Ishada", Context.MODE_PRIVATE)
             if (perfs?.getString("userID", "")?.isEmpty()!!) {
                 startActivity(Intent(this, LoginActivity::class.java))
             } else {
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, MeetingsActivity::class.java))
             }
             finish()
-        }, {
-            Log.e("tasks error", it.toString())
-            queue.cancelAll("tasks")
-            getTasks()
-        })
-        tasksRequest.tag = "tasks"
-        tasksRequest.retryPolicy = DefaultRetryPolicy(0,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
-        queue.add(tasksRequest)
+        }, 2000)
+
     }
 
     private fun setLoader(current: Int) {
@@ -97,7 +51,5 @@ class LauncherActivity : AppCompatActivity() {
         }, 250)
 
     }
-
-
 
 }

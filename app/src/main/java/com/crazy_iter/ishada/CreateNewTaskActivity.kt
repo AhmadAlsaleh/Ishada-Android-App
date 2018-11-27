@@ -113,7 +113,6 @@ class CreateNewTaskActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
                 .setTitle("Cancel Task")
                 .setMessage("Sure to Cancel this Task?")
-                .setIcon(android.R.drawable.ic_dialog_alert)
                 .setPositiveButton("Yes") { _, _ ->
                     super.onBackPressed()
                 }

@@ -62,6 +62,12 @@
             android:textColor="@android:color/white"
             android:textSize="@dimen/list_item_title"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dialog_padding"
+            android:text="Are you new Employee?\nConnect with your Admin to have an account"/>
+
     </LinearLayout>
 
     <FrameLayout
