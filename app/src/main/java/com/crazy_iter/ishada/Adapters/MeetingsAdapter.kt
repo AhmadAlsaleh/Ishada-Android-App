@@ -1,13 +1,15 @@
 package com.crazy_iter.ishada.Adapters
 
 import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
+import com.crazy_iter.ishada.MeetingPreviewActivity
 import com.crazy_iter.ishada.Models.MeetingModel
 import com.crazy_iter.ishada.R
 
@@ -26,7 +28,8 @@ class MeetingsAdapter(private val context: Context, private val meetings: ArrayL
         holder.meetingNumberTV.text = meeting.num.toString()
 
         holder.meetingLL.setOnClickListener {
-            Toast.makeText(context, "TODO", Toast.LENGTH_SHORT).show()
+            context.startActivity(Intent(context, MeetingPreviewActivity::class.java)
+                    .putExtra("id", meeting.id))
         }
 
     }

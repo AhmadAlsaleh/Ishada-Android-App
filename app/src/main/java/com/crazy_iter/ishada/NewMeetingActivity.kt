@@ -1,6 +1,7 @@
 package com.crazy_iter.ishada
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.support.v7.app.AppCompatActivity
@@ -30,6 +31,8 @@ class NewMeetingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_new_meeting)
 
         setSupportActionBar(newMeetingTB)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val ft = supportFragmentManager.beginTransaction()
         ft.replace(R.id.newMeetingFL, LoadingFragment())
@@ -49,20 +52,23 @@ class NewMeetingActivity : AppCompatActivity() {
             DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
                 newMeetingDET.setText("$dayOfMonth-$month-$year")
             }, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH))
+                    .show()
         }
 
         newMeetingSTIV.setOnClickListener {
             val cal = Calendar.getInstance()
             TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
                 newMeetingSTET.setText("$hourOfDay:$minute")
-            }, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true)
+            }, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), false)
+                    .show()
         }
 
         newMeetingETIV.setOnClickListener {
             val cal = Calendar.getInstance()
             TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
                 newMeetingETET.setText("$hourOfDay:$minute")
-            }, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true)
+            }, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), false)
+                    .show()
         }
 
     }
@@ -121,8 +127,8 @@ class NewMeetingActivity : AppCompatActivity() {
                 val newMeetingObject = JSONObject()
                 newMeetingObject.put("title", newMeetingTitleET.text.toString().trim())
                 newMeetingObject.put("startDate", newMeetingDET.text.toString().trim() + " " + newMeetingSTET.text.toString().trim())
-                newMeetingObject.put("endDate", newMeetingTitleET.text.toString().trim() + " " + newMeetingETET.text.toString().trim())
-                newMeetingObject.put("num", newMeetingTitleET.text.toString().trim().toInt())
+                newMeetingObject.put("endDate", newMeetingDET.text.toString().trim() + " " + newMeetingETET.text.toString().trim())
+                newMeetingObject.put("num", newMeetingNumET.text.toString().trim().toInt())
 
                 val itemsJSON = JSONArray()
                 for (i in items) {
@@ -138,6 +144,8 @@ class NewMeetingActivity : AppCompatActivity() {
                 sendRequest(newMeetingObject)
 
             }
+
+            android.R.id.home -> onBackPressed()
         }
         return super.onOptionsItemSelected(item)
     }
@@ -162,4 +170,16 @@ class NewMeetingActivity : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+        AlertDialog.Builder(this)
+                .setMessage("Sure to Cancel this Meeting?")
+                .setPositiveButton("Yes") { _, _ ->
+                    super.onBackPressed()
+                }
+                .setNegativeButton("No") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .create()
+                .show()
+    }
 }
